@@ -1,21 +1,32 @@
-<%--
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <body>
 <h2>Hello World!</h2>
-<a href="hello?username=hehe">hello</a>
-<form action="saveUser">
+<a href="hello?username=hehe">findById</a>
+<a href="findAll">findAll</a>
+<form action="saveUser"id="bd1">
     用户名:<input type="text" name="username"><br/>
     密码:<input type="text" name="password"><br/>
     act:<input type="text" name="act"><br/>
-    vip:<input type="text" name="password"><br/>
+    vip:<input type="text" name="vip"><br/>
+    address:<input type="text" name="address"><br/>
+    phone:<input type="text" name="phone"><br/>
+    <input type="submit" value="提交">
+</form>
+<a href="deleteUser?username=hehe">deleteUser</a>
+<form action="updateUser" id="bd2">
+    用户名:<input type="text" name="username"><br/>
+    密码:<input type="text" name="password"><br/>
+    act:<input type="text" name="act"><br/>
+    vip:<input type="text" name="vip"><br/>
     address:<input type="text" name="address"><br/>
     phone:<input type="text" name="phone"><br/>
     <input type="submit" value="提交">
 </form>
 </body>
 </html>
---%>
+
+<%--
 <%@ page language="java" contentType="text/html; charset=UTF-8"
          pageEncoding="UTF-8"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -29,7 +40,7 @@
     <link rel="stylesheet" href="res/static/css/mian.css">
 </head>
 <body class="lay-blog">
-<%--<%
+&lt;%&ndash;<%
     HttpSession s=request.getSession();
     String act1=(String)s.getAttribute("act1");
     if(act1==null){
@@ -50,7 +61,7 @@
             s.removeAttribute("msg");
         }
     }
-%>--%>
+%>&ndash;%&gt;
 <div class="header">
     <div class="header-wrap">
         <h1 class="logo pull-left">
@@ -101,7 +112,7 @@
             <c:if test="${not empty list }">
                 <c:forEach items="${list }" var="i">
                     <div class="item">
-                        <%--<div class="item-box  layer-photos-demo1 layer-photos-demo">
+                        &lt;%&ndash;<div class="item-box  layer-photos-demo1 layer-photos-demo">
                             <h3><a href="details.html">${i.username }</a></h3>
                             <h5>发布于：<span>${i.stape }</span></h5>
                             <p>物品名：${i.tname}<br>时间：${i.tape}<br>地点：${i.locar}<br>类型：${i.leixing}<br>物品描述： ${i.infor }</p>
@@ -109,7 +120,7 @@
                         <div class="comment count">
                             <a href="message.jsp?id=${i.id}">留言</a>
                             <a href="javascript:;" class="like">点赞</a>
-                        </div>--%>
+                        </div>&ndash;%&gt;
                     </div>
                 </c:forEach>
             </c:if>
@@ -135,4 +146,4 @@
     }).use('blog');
 </script>
 </body>
-</html>
+</html>--%>

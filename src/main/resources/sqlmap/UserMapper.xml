@@ -9,13 +9,12 @@
     <result column="address" property="address" jdbcType="VARCHAR" />
     <result column="phone" property="phone" jdbcType="VARCHAR" />
   </resultMap>
-  <sql id="Base_Column_List" >
-    username, password, act, vip, address, phone
-  </sql>
+
+  <select id="findAll" resultType="User" >
+    select * from user
+  </select>
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.String" >
-    select 
-    <include refid="Base_Column_List" />
-    from user
+    select * from user
     where username = #{username,jdbcType=VARCHAR}
   </select>
   <delete id="deleteByPrimaryKey" parameterType="java.lang.String" >

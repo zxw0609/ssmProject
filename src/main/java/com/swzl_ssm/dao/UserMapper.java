@@ -5,6 +5,7 @@ import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.annotation.MapperScan;
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 
 @Repository
 public interface UserMapper {
@@ -17,7 +18,25 @@ public interface UserMapper {
 
     /**
      * 保存用户信息
-     * @param u
+     * @param user
      */
-    void insertSelective(User u);
+    void insertSelective(User user);
+
+    /**
+     * 查询全部信息
+     *
+     */
+    List<User> findAll();
+
+    /**
+     * 删除用户信息
+     * @param Username
+     */
+    void deleteByPrimaryKey(String username);
+
+    /**
+     * 更新用户信息
+     * @param user
+     */
+    void updateByPrimaryKeySelective(User user);
 }

@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.sql.SQLException;
+import java.util.List;
 
 /**
  * @author zhangxw
@@ -23,10 +24,24 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    public void saveUser(User u) {
-        ud.insertSelective(u);
+    public void saveUser(User user) {
+        ud.insertSelective(user);
     }
 
+    @Override
+    public List findAll() {
+        return ud.findAll();
+    }
+
+    @Override
+    public void deleteUser(String username){
+        ud.deleteByPrimaryKey(username);
+    }
+
+    @Override
+    public void updateUser(User user){
+        ud.updateByPrimaryKeySelective(user);
+    }
     /*@Override
     public boolean loginUser(String username, String password) {
         User us2 = ud.findById(username);
